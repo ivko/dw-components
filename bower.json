@@ -1,0 +1,35 @@
+{
+  "name": "dw-components",
+  "description": "docuware core lib",
+  "main": "/src/main.js",
+  "authors": [
+    "docuware team"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "docuware",
+    "core"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "2.1.22",
+    "text": "2.0.14",
+    "sammy": "0.7.6",
+    "jquery": "2.1.4",
+    "knockout": "3.4.0",
+    "mootools": "1.6.0",
+    "../../../../RestfulWebservices/AspMvcSharedResources/SharedResources": "*"
+  },
+  "devDependencies": {}
+}

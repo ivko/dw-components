@@ -1,0 +1,31 @@
+<script type="text/html" id="main">
+    <div class="container-wrapper container-fluid">
+        <div class="row-wrapper">
+            <div class="sidebar-wrapper">
+                <div class="logo-wrapper">
+                    <div class="dw-logo"></div>
+                    <div class="logo-caption"></div>
+                </div>
+                <div class="nav-wrapper">
+                    <ul class="nav navbar-nav nav-list">
+                        <li><a href="index.html">Introduction</a></li>
+                        <li data-bind="foreach: $data.navigation">
+                            <a data-bind="text: $data.label, url: $data.id"></a>
+                            <ul data-bind="foreach: $data.pages">
+                                <a data-bind="text: $data.label, url: $data.id"></a>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-wrapper">
+                <div class="fit">
+                    <!-- ko with: $data.chosenPage -->
+                        <span data-bind="text: attr.id"></span>
+                    <!-- /ko -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</script>

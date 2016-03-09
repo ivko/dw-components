@@ -1,0 +1,3 @@
+define([
+    './bindings/url'
+], function() {});
