@@ -20,7 +20,7 @@ module.exports = function (grunt) {
             }
         },
         watch: {
-            files: "less/*.less",
+            files: "src/css/*.less",
             tasks: ["less"]
         },
         // "less"-task configuration
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
             development: {
                 files: {
                     // compilation.css  :  source.less
-                    "src/css/style.css": "less/style.less"
+                    "src/css/style.css": "src/css/style.less"
                 }
             }
         }

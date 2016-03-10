@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>DW Components</title>
+    <script src="src/vendor/require.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
+    <script type="text/javascript">
+        require.config({ baseUrl: "src/vendor" });
+        
+        require(["../config"], function () {
+            require(["app/main"]);
+        });
+    </script>
+</head>
+<body>
+    <div id="ko-root">
+        <!--ko template: { name: 'main', data: $data } -->
+        <!--/ko -->
+    </div>
+</body>
+</html>
+

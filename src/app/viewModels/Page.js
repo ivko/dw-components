@@ -27,7 +27,7 @@ define(['jquery', 'knockout', 'app/utils', 'app/viewModels/Disposable'], functio
             return utils.defer(function(dfd){
                 utils.acquire(this.moduleId).then(function(viewModel){
                     this.active(true);
-                    dfd.resolve(loaded);
+                    dfd.resolve(viewModel);
                 }.bind(this)).fail(function(err){
                     utils.error('Failed to load page. Details: ' + err.message);
                 }.bind(this));

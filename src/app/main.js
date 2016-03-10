@@ -1,3 +1,8 @@
+/* global ko */
+/* global Class */
+/* global Options */
+/* global DW */
+/* global App */
 define(['jquery', 'app/utils', 'app/navigation', 'app/templates', 'app/viewModels', 'app/bindings'], function ($, utils, navigation, templates) {
 
     var Main = new Class({
@@ -9,8 +14,8 @@ define(['jquery', 'app/utils', 'app/navigation', 'app/templates', 'app/viewModel
 
             var pages = {
                 // make sure that we have default page (homepage and errorpage) 
-                "index": new App.Page({"id": "index", "moduleId": "app/pages/index", "label": "Index"}),
-                "404": new App.Page({"id": "404", "moduleId": "app/pages/404", "label": "e404"}),
+                "index": new App.Page({"id": "index", "moduleId": "app/modules/index", "label": "Index"}),
+                "404": new App.Page({"id": "404", "moduleId": "app/modules/404", "label": "Error404"}),
             };
             
             navigation.forEach(function(section) {
@@ -40,7 +45,7 @@ define(['jquery', 'app/utils', 'app/navigation', 'app/templates', 'app/viewModel
             }, this);
             
             this.chosenPage.subscribe(function(page) {
-                console.log('chosenPage', page.template);
+                console.log('chosenPage', page);
             });
             
             this.start();

@@ -3,10 +3,10 @@ define([], function() {
         {
             "id": "core",
             "label": "dw.core",
-            "moduleId": "app/pages/core",
+            "moduleId": "app/modules/core",
             "pages": [
-                { "id": "core.disposable", "moduleId": "app/pages/core.disposable", "label": "DW.Disposable" },
-                { "id": "core.command", "moduleId": "app/pages/core.command", "label": "DW.Command" }
+                { "id": "core.disposable", "moduleId": "app/modules/core.disposable", "label": "DW.Disposable" },
+                { "id": "core.command", "moduleId": "app/modules/core.command", "label": "DW.Command" }
             ]
         }
     ];

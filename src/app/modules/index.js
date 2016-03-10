@@ -1,5 +1,5 @@
 define([
-    'text!app/templates/index'
+    'text!app/templates/index.html'
 ], function(template) {
     
 });
