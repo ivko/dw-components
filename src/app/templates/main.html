@@ -4,28 +4,33 @@
             <div class="sidebar-wrapper">
                 <div class="logo-wrapper">
                     <div class="dw-logo"></div>
-                    <div class="logo-caption"></div>
                 </div>
                 <div class="nav-wrapper">
-                    <ul class="nav navbar-nav nav-list">
-                        <li><a href="index.html">Introduction</a></li>
-                        <li data-bind="foreach: $data.navigation">
-                            <a data-bind="text: $data.label, url: $data.id"></a>
-                            <ul data-bind="foreach: $data.pages">
-                                <a data-bind="text: $data.label, url: $data.id"></a>
-                            </ul>
-                        </li>
-                    </ul>
+                    <div class="list-group" data-bind="foreach: $data.navigation">
+                        <!-- ko ifnot: $data.children -->
+                            <a class="list-group-item" data-bind="text: $data.label, url: $data.id, visible: !$data.hidden, css: {'active': $root.moduleId() == $data.id}"></a>
+                        <!-- /ko -->
+                        <!-- ko if: $data.children -->
+                            <a class="list-group-item collapsed" data-toggle="collapse" data-bind="text: $data.label, url: ($data.children ? 'navigation-' : '') + $data.id, visible: !$data.hidden"></a>
+                            <div class="submenu panel-collapse collapse" aria-expanded="false" data-bind="attr: {'id': 'navigation-' + $data.id}, foreach: $data.children">
+                                <a class="list-group-item" data-bind="text: $data.label, url: $data.id, css: {'active': $root.moduleId() == $data.id}"></a>
+                            </div>
+                        <!-- /ko -->
+                    </div>
                 </div>
             </div>
             <div class="content-wrapper">
-                <div class="fit">
-                    <!-- ko with: $data.chosenPage -->
-                        <span data-bind="text: attr.id"></span>
+                <div class="module-wrapper container-fluid">
+                    <!-- ko with: $data.chosenModule -->
+                        <!-- ko template: {
+                            name: $data.template,
+                            data: $data.viewModel
+                        } -->
+                        <!-- /ko -->
                     <!-- /ko -->
                 </div>
             </div>
         </div>
     </div>
-    
+
 </script>

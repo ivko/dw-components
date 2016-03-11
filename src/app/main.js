@@ -3,7 +3,7 @@
 /* global Options */
 /* global DW */
 /* global App */
-define(['jquery', 'app/utils', 'app/navigation', 'app/templates', 'app/viewModels', 'app/bindings'], function ($, utils, navigation, templates) {
+define(['jquery', 'app/utils', 'app/navigation', 'app/templates', 'app/router', 'app/module', 'app/bindings'], function ($, utils, navigation, templates) {
 
     var Main = new Class({
         Extends: DW.Disposable,
@@ -12,41 +12,38 @@ define(['jquery', 'app/utils', 'app/navigation', 'app/templates', 'app/viewModel
         initialized: false,
         initialize: function(navigation) {
 
-            var pages = {
-                // make sure that we have default page (homepage and errorpage) 
-                "index": new App.Page({"id": "index", "moduleId": "app/modules/index", "label": "Index"}),
-                "404": new App.Page({"id": "404", "moduleId": "app/modules/404", "label": "Error404"}),
-            };
-            
+            var modules = {};
+
             navigation.forEach(function(section) {
-                pages[section.id] = new App.Page(section);
-                
-                section.pages.forEach(function(page) {
-                    pages[page.id] = new App.Page(page);
-                }, this)
+                modules[section.id] = new App.Module(section);
+                if (section.children) {
+                    section.children.forEach(function(page) {
+                        modules[page.id] = new App.Module(page);
+                    }, this)
+                }
             }, this);
             
             this.navigation = navigation;
-            this.chosenPage = this.addDisposable(ko.observable(null));
+            this.moduleId = this.addDisposable(ko.observable(null));
+            this.chosenModule = this.addDisposable(ko.observable(null));
 
-            this.router = new App.Router(pages);
-
-            this.router.page.subscribe(function(page) {
-                var chosen = this.chosenPage();
+            this.router = new App.Router({modules: modules});
+            this.router.module.subscribe(function(module) {
+                var chosen = this.chosenModule();
                 
                 if (chosen) {
-                    if (chosen.attr.id() == page.attr.id()) return;
+                    if (chosen.attr.id() == module.attr.id()) return;
                     chosen.deactivate();
                 }
                 
-                $.when(page.activate()).then(function(page) {
-                    this.chosenPage(page);
+                $.when(module.activate()).then(function(module) {
+                    this.chosenModule(module);
                 }.bind(this));
             }, this);
             
-            this.chosenPage.subscribe(function(page) {
-                console.log('chosenPage', page);
-            });
+            this.chosenModule.subscribe(function(module) {
+                this.moduleId(module ? module.attr.id() : null);
+            }.bind(this));
             
             this.start();
         },
@@ -60,5 +57,5 @@ define(['jquery', 'app/utils', 'app/navigation', 'app/templates', 'app/viewModel
 
     var vm = new Main(navigation);
     
-    ko.applyBindings(vm, document.id('ko-root'));
+    ko.applyBindings(vm, document.getElementById('ko-root'));
 });

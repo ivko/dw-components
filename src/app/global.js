@@ -1,4 +1,4 @@
-define(['knockout', 'jquery', 'mootools', 'text'], function (ko, $) {
+define(['knockout', 'jquery', 'mootools', 'text', 'bootstrap'], function (ko, $) {
     window.ko = ko;
 
     window.namespace = window.ns = function (namespace, value) {

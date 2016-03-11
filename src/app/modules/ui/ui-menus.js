@@ -1,9 +1,11 @@
 define([
     'app/utils',
-    'text!app/templates/404.html'
+    'text!app/templates/ui/ui-menus.html'
 ], function(utils, template) {
     utils.addTemplates(template);
+    
+    
     return {
-        template: '_404'
+        template: 'template-ui-menus'
     }
 });

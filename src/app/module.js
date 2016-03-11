@@ -1,5 +1,5 @@
 define(['jquery', 'knockout', 'app/utils', 'app/viewModels/Disposable'], function ($, ko, utils) {
-    var Page = new Class({
+    var Module = new Class({
         Extends: DW.Disposable,
         Implements: [Options],
         children: [],
@@ -15,29 +15,24 @@ define(['jquery', 'knockout', 'app/utils', 'app/viewModels/Disposable'], functio
             }, this);
             
             this.active = this.addDisposable(ko.observable(false));
-            
             this.url = this.getUrl();
             this.content = this.addDisposable(ko.observable());
-            this.template = ko.unwrap(this.attr.template) || this.url;
             this.viewModel = this.addDisposable(ko.observable());
             this.moduleId = ko.unwrap(this.attr.moduleId);
         },
         activate: function() {
-            utils.log('Activate page: ' + this.moduleId);
+            utils.log('Activate module: ' + this.moduleId);
             return utils.defer(function(dfd){
-                utils.acquire(this.moduleId).then(function(viewModel){
+                utils.acquire(this.moduleId).then(function(module){
                     this.active(true);
-                    dfd.resolve(viewModel);
+                    if (module) {
+                        this.template = module.getTemplate ? module.getTemplate() : module.template;
+                        this.viewModel(module);
+                    }
+                    dfd.resolve(this);
                 }.bind(this)).fail(function(err){
-                    utils.error('Failed to load page. Details: ' + err.message);
+                    utils.error('Failed to load module. Details: ' + err.message);
                 }.bind(this));
-            }.bind(this));
-            
-            
-            
-            return $.Deferred(function(defer) {
-                
-                defer.resolve(this);
             }.bind(this)).promise();
         },
         deactivate: function() {
@@ -48,5 +43,5 @@ define(['jquery', 'knockout', 'app/utils', 'app/viewModels/Disposable'], functio
         }
     });
     
-    return namespace('App.Page', Page);
+    return namespace('App.Module', Module);
 });

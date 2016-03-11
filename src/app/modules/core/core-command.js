@@ -1,9 +1,9 @@
 define([
     'app/utils',
-    'text!app/templates/404.html'
+    'text!app/templates/core/core-command.html'
 ], function(utils, template) {
     utils.addTemplates(template);
     return {
-        template: '_404'
+        template: 'template-core-command'
     }
 });

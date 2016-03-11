@@ -15,7 +15,11 @@ module.exports = function (grunt) {
                     { src: 'bower_components/knockout/dist/knockout.debug.js', dest: 'src/vendor/knockout.js' },
                     { src: 'bower_components/jquery/dist/jquery.js', dest: 'src/vendor/jquery.js' },
                     { src: 'bower_components/mootools/dist/mootools-core.js', dest: 'src/vendor/mootools.js' },
-                    { src: 'bower_components/sammy/lib/sammy.js', dest: 'src/vendor/sammy.js' }
+                    { src: 'bower_components/sammy/lib/sammy.js', dest: 'src/vendor/sammy.js' },
+                    { src: 'bower_components/bootstrap/dist/js/bootstrap.js', dest: 'src/vendor/bootstrap.js' },
+                    { src: 'bower_components/js-beautify/js/lib/beautify.js', dest: 'src/vendor/beautify.js' },
+                    { src: 'bower_components/js-beautify/js/lib/beautify-css.js', dest: 'src/vendor/beautify-css.js' },
+                    { src: 'bower_components/js-beautify/js/lib/beautify-html.js', dest: 'src/vendor/beautify-html.js' },
                 ]
             }
         },
