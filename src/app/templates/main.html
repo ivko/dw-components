@@ -8,12 +8,15 @@
                 <div class="nav-wrapper">
                     <div class="list-group" data-bind="foreach: $data.navigation">
                         <!-- ko ifnot: $data.children -->
-                            <a class="list-group-item" data-bind="text: $data.label, url: $data.id, visible: !$data.hidden, css: {'active': $root.moduleId() == $data.id}"></a>
+                            <a class="list-group-item" data-bind="text: $data.attr.label, url: $data.attr.id(), visible: !$data.hidden, css: {'active': $data.active()}"></a>
                         <!-- /ko -->
                         <!-- ko if: $data.children -->
-                            <a class="list-group-item collapsed" data-toggle="collapse" data-bind="text: $data.label, url: ($data.children ? 'navigation-' : '') + $data.id, visible: !$data.hidden"></a>
-                            <div class="submenu panel-collapse collapse" aria-expanded="false" data-bind="attr: {'id': 'navigation-' + $data.id}, foreach: $data.children">
-                                <a class="list-group-item" data-bind="text: $data.label, url: $data.id, css: {'active': $root.moduleId() == $data.id}"></a>
+                            <a class="list-group-item" data-toggle="collapse" data-bind="attr: {'aria-expanded': String($data.activeChild())}, css: { collapsed: !$data.activeChild() }, url: ($data.children ? 'navigation-' : '') + $data.url, visible: !$data.hidden">
+                                <span data-bind="text: $data.attr.label"></span>
+                                <b class="ui-icon list-item-caret"></b>
+                            </a>
+                            <div class="submenu panel-collapse collapse" data-bind="attr: {'aria-expanded': String($data.activeChild()), 'id': ('navigation-' + $data.attr.id()) }, css: { 'in': $data.activeChild()}, foreach: $data.children">
+                                <a class="list-group-item" data-bind="text: $data.attr.label, url: $data.url, css: {'active': $data.active()}"></a>
                             </div>
                         <!-- /ko -->
                     </div>
@@ -32,5 +35,7 @@
             </div>
         </div>
     </div>
+</script>
+<script type="text/javascript">
 
 </script>

@@ -1,3 +1,3 @@
 define([
-    './bindings/url'
+    './bindings/ko.url'
 ]);

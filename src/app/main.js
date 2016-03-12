@@ -14,26 +14,29 @@ define(['jquery', 'app/utils', 'app/navigation', 'app/templates', 'app/router', 
 
             var modules = {};
 
-            navigation.forEach(function(section) {
-                modules[section.id] = new App.Module(section);
+            navigation.forEach(function(section, idx, arr) {
                 if (section.children) {
-                    section.children.forEach(function(page) {
-                        modules[page.id] = new App.Module(page);
+                    section.children.forEach(function(page, idx, arr) {
+                        arr[idx] = modules[page.id] = new App.Module(page);
                     }, this)
                 }
+                arr[idx] = modules[section.id] = new App.Module(section);
             }, this);
             
             this.navigation = navigation;
+            console.log(this.navigation);
             this.moduleId = this.addDisposable(ko.observable(null));
             this.chosenModule = this.addDisposable(ko.observable(null));
 
             this.router = new App.Router({modules: modules});
+            
             this.router.module.subscribe(function(module) {
                 var chosen = this.chosenModule();
                 
                 if (chosen) {
                     if (chosen.attr.id() == module.attr.id()) return;
                     chosen.deactivate();
+                    this.chosenModule(null);
                 }
                 
                 $.when(module.activate()).then(function(module) {

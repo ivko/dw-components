@@ -2,23 +2,33 @@ define(['jquery', 'knockout', 'app/utils', 'app/viewModels/Disposable'], functio
     var Module = new Class({
         Extends: DW.Disposable,
         Implements: [Options],
-        children: [],
+        children: null,
         attr: {},
         template: null,
         getUrl: function(sufix) {
             return this.attr.id() + (sufix ? '/' + sufix : '');
         },
         initialize: function(options) {
-            
+
+            if (options.children) {
+                this.children = options.children
+                delete options['children'];
+            }
+
             this.attr = Object.map(options, function(value, key) {
                 return this.addDisposable($.isArray(value) ? ko.observableArray(value) : ko.observable(value));
             }, this);
             
+            this.activeChild = this.addDisposable(this.addDisposable(ko.computed(function() {
+                if (!this.children) return false;
+                return this.children.some(function(item) {return item.active()});
+            }, this)).extend({ rateLimit: 100 }));
+            
             this.active = this.addDisposable(ko.observable(false));
             this.url = this.getUrl();
-            this.content = this.addDisposable(ko.observable());
             this.viewModel = this.addDisposable(ko.observable());
             this.moduleId = ko.unwrap(this.attr.moduleId);
+            
         },
         activate: function() {
             utils.log('Activate module: ' + this.moduleId);

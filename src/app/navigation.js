@@ -11,8 +11,7 @@ define([], function() {
             "moduleId": false,
             "children": [
                 { "id": "core.disposable", "moduleId": "app/modules/core/core-disposable", "label": "Disposable" },
-                { "id": "core.command", "moduleId": "app/modules/core/core-command", "label": "Command" },
-                { "id": "core.test", "moduleId": "app/modules/core/core-test", "label": "Test" }
+                { "id": "core.command", "moduleId": "app/modules/core/core-command", "label": "Command" }
             ]
         },
         {

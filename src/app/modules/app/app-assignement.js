@@ -1,9 +1,9 @@
 define([
     'app/utils',
-    'text!app/templates/ui/ui-menus.html'
+    'text!app/templates/app/app-assignement.html'
 ], function(utils, template) {
     utils.addTemplates(template);
     return {
-        template: 'template-ui-menus'
+        template: 'template-app-assignement'
     }
 });
