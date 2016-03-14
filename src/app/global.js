@@ -1,9 +1,8 @@
 define(['knockout', 'jquery', 'mootools', 'text', 'bootstrap'], function (ko, $) {
-    window.ko = ko;
 
-    window.namespace = window.ns = function (namespace, value) {
+    function ns(path, value) {
         var args = Array.slice(arguments);
-        return (namespace || '').split('.').reduce(function (ns, fragment, index, all) {
+        return (path || '').split('.').reduce(function (ns, fragment, index, all) {
             var defaultValue = args.length == 2 && (index + 1) === all.length ? value : {};
             return ns[fragment] || Object.defineProperty(ns, fragment, {
                 value: defaultValue,
@@ -13,9 +12,10 @@ define(['knockout', 'jquery', 'mootools', 'text', 'bootstrap'], function (ko, $)
             })[fragment];
         }, this);
     };
-    
-    window.addTemplate = function(template) {
-        $(document.body).append(template);
-    };
-    
+
+    $.extend(window, {
+        ko: ko,
+        ns: ns,
+        namespace: ns
+    });
 });

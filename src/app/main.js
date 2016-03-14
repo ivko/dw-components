@@ -24,10 +24,8 @@ define(['jquery', 'app/utils', 'app/navigation', 'app/templates', 'app/router', 
             }, this);
             
             this.navigation = navigation;
-            console.log(this.navigation);
             this.moduleId = this.addDisposable(ko.observable(null));
             this.chosenModule = this.addDisposable(ko.observable(null));
-
             this.router = new App.Router({modules: modules});
             
             this.router.module.subscribe(function(module) {

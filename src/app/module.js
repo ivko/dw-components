@@ -28,6 +28,7 @@ define(['jquery', 'knockout', 'app/utils', 'app/viewModels/Disposable'], functio
             this.url = this.getUrl();
             this.viewModel = this.addDisposable(ko.observable());
             this.moduleId = ko.unwrap(this.attr.moduleId);
+            this.hidden = ko.unwrap(this.attr.hidden);
             
         },
         activate: function() {
