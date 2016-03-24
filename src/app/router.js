@@ -1,4 +1,4 @@
-define(['knockout', 'sammy', 'app/viewModels/Disposable'], function (ko, Sammy) {
+define(['knockout', 'sammy', './viewModels/Disposable'], function (ko, Sammy) {
     
     var Router = new Class({
         Extends: DW.Disposable,

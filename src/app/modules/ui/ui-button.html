@@ -1,0 +1,85 @@
+<script type="text/html" id="template-ui-button">
+    <div class="dw-docs-section">
+        <h1 class="page-header">Buttons</h1>
+        <p>A button clearly communicates what action will occur when the user touches it. It consists of text, an icon, or both, designed in accordance with your app’s color theme.</p>
+        
+        <div class="example">
+            <h5>Default functionality</h5>
+            <div class="list">
+                <button type="button" data-bind="jqueryui: {
+                    widget: 'button',
+                    options: {
+                        label: 'Cancel'
+                    }
+                }" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Cancel</span></button>
+
+                <button type="button" class="main ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" data-bind="jqueryui: {
+                    widget: 'button',
+                    options: {
+                        label: 'Save'
+                    }
+                }" role="button" aria-disabled="false"><span class="ui-button-text">Save</span></button>
+            </div>
+            <h5>Icons</h5>
+            <div class="list">
+                <button type="button" data-bind="jqueryui: {
+                    widget: 'button',
+                    options: {
+                        icons: {
+                            primary: 'dw-icon-configurations'
+                        },
+                        text: false
+                    }
+                }" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" aria-disabled="false" title=""><span class="ui-button-icon-primary ui-icon dw-icon-configurations"></span><span class="ui-button-text"></span></button>
+
+                <button type="button" data-bind="jqueryui: {
+                    widget: 'button',
+                    options: {
+                        icons: {
+                            primary: 'dw-icon-edit'
+                        },
+                        label:'Button with icon on the left'
+                    }
+                }" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon dw-icon-edit"></span><span class="ui-button-text">Button with icon on the left</span></button>
+                <button type="button" data-bind="jqueryui: {
+                    widget: 'button',
+                    options: {
+                        icons: {
+                            secondary: 'ui-icon-triangle-1-s'
+                        },
+                        label: 'Button with icon on the right'
+                    }
+                }" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-secondary" role="button" aria-disabled="false"><span class="ui-button-text">Button with icon on the right</span><span class="ui-button-icon-secondary ui-icon ui-icon-triangle-1-s"></span></button>
+                <button type="button" data-bind="jqueryui: {
+                    widget: 'button',
+                    options: {
+                        icons: {
+                            primary: 'dw-icon-edit',
+                            secondary: 'ui-icon-triangle-1-s'
+                        },
+                        label: 'Button with two icons'
+                    }
+                }" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icons" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon dw-icon-edit"></span><span class="ui-button-text">Button with two icons</span><span class="ui-button-icon-secondary ui-icon ui-icon-triangle-1-s"></span></button>
+                <button type="button" data-bind="jqueryui: {
+                    widget: 'button',
+                    options: {
+                        icons: {
+                            primary: 'dw-icon-indexing',
+                            secondary: 'ui-icon-triangle-1-s'
+                        },
+                        text: false
+                    }
+                }" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icons-only" role="button" aria-disabled="false" title=""><span class="ui-button-icon-primary ui-icon dw-icon-indexing"></span><span class="ui-button-text"></span><span class="ui-button-icon-secondary ui-icon ui-icon-triangle-1-s"></span></button>
+                <button type="button" class="link ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" data-bind="jqueryui: {
+                    widget: 'button',
+                    options: {
+                        icons: {
+                            primary: 'ui-icon-triangle-1-e',
+                        },
+                        label: 'Link button'
+                    }
+                }" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-triangle-1-e"></span><span class="ui-button-text">Link button</span></button>
+            </div>
+        </div>
+    </div>
+</script>

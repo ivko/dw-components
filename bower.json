@@ -30,7 +30,9 @@
     "jquery": "2.1.4",
     "knockout": "3.4.0",
     "mootools": "1.6.0",
-    "js-beautify": "1.6.2"
+    "js-beautify": "1.6.2",
+    "google-code-prettify": "*",
+    "jsrender": "^0.9.74"
   },
   "devDependencies": {}
 }

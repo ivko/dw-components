@@ -7,6 +7,7 @@ define([], function() {
         },
         {
             "id": "core",
+            "hidden": true,
             "label": "Docuware Core",
             "moduleId": false,
             "children": [
@@ -19,7 +20,8 @@ define([], function() {
             "label": "Docuware UI",
             "moduleId": false,
             "children": [
-                { "id": "ui.button", "moduleId": "app/modules/ui/ui-button", "label": "Button" },
+                { "id": "ui.button", "moduleId": "app/modules/ui/ui-button", "label": "Buttons" },
+                { "id": "ui.datetime", "moduleId": "app/modules/ui/ui-datetime", "label": "Date Time" },
                 { "id": "ui.checkbox", "moduleId": "app/modules/ui/ui-checkbox", "label": "Checkboxes" },
                 { "id": "ui.radio", "moduleId": "app/modules/ui/ui-radio", "label": "Radio buttons" },
                 { "id": "ui.tabs", "moduleId": "app/modules/ui/ui-tabs", "label": "Tabs" },
@@ -33,10 +35,11 @@ define([], function() {
         },
         {
             "id": "app",
+            "hidden": true,
             "label": "Application Components",
             "moduleId": false,
             "children": [
-                { "id": "app.assignement", "moduleId": "app/modules/app/app-assignement", "label": "User assignement" },
+               { "id": "app.assignement", "moduleId": "app/modules/app/app-assignement", "label": "User assignement" },
             ]
         },
         {

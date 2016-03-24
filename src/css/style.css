@@ -14266,6 +14266,16 @@ body {
   margin-left: 100px;
   margin-bottom: 60px;
 }
+.container-wrapper .content-wrapper .module-wrapper .example {
+  border: 1px solid #F0F0F0;
+  padding: 10px;
+}
+.container-wrapper .content-wrapper .module-wrapper .list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  margin-bottom: 20px;
+}
 .container-wrapper .search-bar {
   position: relative;
 }

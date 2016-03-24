@@ -1,6 +1,6 @@
 define([
     'app/utils',
-    'text!app/templates/core/core-command.html'
+    'text!./core-command.html'
 ], function(utils, template) {
     utils.addTemplates(template);
     return {

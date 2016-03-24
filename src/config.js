@@ -3,6 +3,9 @@ require.config({
     paths: {
         "app": "../app"
     },
+    map: {
+
+    },
     shim: {
         "knockout": ["jquery"],
         "app/viewModels/Disposable": ["app/global"]

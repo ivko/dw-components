@@ -20,6 +20,8 @@ module.exports = function (grunt) {
                     { src: 'bower_components/js-beautify/js/lib/beautify.js', dest: 'src/vendor/beautify.js' },
                     { src: 'bower_components/js-beautify/js/lib/beautify-css.js', dest: 'src/vendor/beautify-css.js' },
                     { src: 'bower_components/js-beautify/js/lib/beautify-html.js', dest: 'src/vendor/beautify-html.js' },
+                    { src: 'bower_components/jsrender/jsrender.js', dest: 'src/vendor/jsrender.js'},
+                    //{ cwd: 'bower_components/jquery-ui/ui', src: '**', expand: true, dest: 'src/vendor/jquery-ui' }
                 ]
             }
         },
