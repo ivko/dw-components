@@ -1,4 +1,4 @@
-﻿; (function ($) {
+﻿define(['jquery', 'knockout'], function ($, ko) {
     var commentNodesHaveTextProperty = document.createComment("test").text === "<!--test-->";
     var startCommentRegex = commentNodesHaveTextProperty ? /^<!--\s*ko(?:\s+(.+\s*\:[\s\S]*))?\s*-->$/ : /^\s*ko(?:\s+(.+\s*\:[\s\S]*))?\s*$/;
     var endCommentRegex = commentNodesHaveTextProperty ? /^<!--\s*\/ko\s*-->$/ : /^\s*\/ko\s*$/;
@@ -80,4 +80,4 @@
     };
     ko.virtualElements.allowedBindings.templateSrc = true;
 
-})(jQuery);
+});

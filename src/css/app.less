@@ -1,5 +1,7 @@
 @fontsPath: "../fonts/";
-body {
+@import "https://cdn.rawgit.com/google/code-prettify/master/styles/sons-of-obsidian.css";
+                
+body > div {
     -ms-touch-action: none;
     touch-action: none;
     -webkit-touch-callout: none !important;
@@ -109,6 +111,7 @@ body {
     }
     .content-wrapper {
         width: ~"calc( 100% - 285px )";
+        overflow: auto;
         .module-wrapper {
             max-width: 950px;
             margin-left: 100px;

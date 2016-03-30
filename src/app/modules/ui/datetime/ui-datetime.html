@@ -1,0 +1,141 @@
+<script type="text/html" id="template-ui-datetime">
+    <div class="container" id="sandbox">
+        <h2>Date and Datetime pickers<small>&alpha;lph&alpha;</small></h2>
+        <p>
+            Uses Keith Wood’s <a target="_blank" href="http://keith-wood.name/dateEntry.html">dateentry</a>,
+            <a target="_blank" href="http://keith-wood.name/datetimeEntry.html">datetimeentry</a>
+            and <a target="_blank" href="http://keith-wood.name/calendars.html">calendar picker</a>
+        </p>
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#demo" data-toggle="tab">Demo</a></li>
+            <li><a href="#requirements" data-toggle="tab">Requirements</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade active in" id="demo">
+                <p>Use the form below to tweak the options; results and code appear in realtime below.</p>
+                <div class="form form-horizontal">
+                    <div class="well">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Type</label>
+                                    <div class="col-sm-10">
+                                        <label for="type-date-picker" class="radio-inline">
+                                            <input name="type" id="type-date-picker" value="DatePicker" type="radio" data-bind="checked: data.pickerType">
+                                            Date Picker
+                                        </label>
+                                        <label for="type-date-time-picker" class="radio-inline">
+                                            <input name="type" id="type-date-time-picker" value="DateTimePicker" type="radio" data-bind="checked: data.pickerType">
+                                            Date Time Picker
+                                        </label>
+                                        <label for="type-range" class="checkbox-inline" style="margin-left: 10px;">
+                                            <input name="range" id="type-range" data-bind="checked: data.isRange" type="checkbox">
+                                            Date range between two dates
+                                        </label>
+                                        <label for="type-readonly" class="checkbox-inline">
+                                            <input name="readonly" id="type-readonly" data-bind="checked: data.isReadOnly" type="checkbox">
+                                            ReadOnly mode
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="language" class="col-sm-2 control-label">Language:</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="language" name="language" data-bind="value: data.language, options: data.cultures, optionsText: 'text', optionsValue: 'value'"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Calendar Options</h4>
+                <div class="well">
+                    <div class="form-inline">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" data-bind="checked:data.changeMonth" />
+                            Change Month
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" data-bind="checked:data.changeYear" />
+                            changeYear
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" data-bind="checked:data.showButtonPanel" />
+                            showButtonPanel
+                        </label>
+                    </div>
+                </div>
+                <h4>Result</h4>
+                <div class="row form-horizontal">
+                    <div class="col-md-5" id="sandbox-container"></div>
+                    <div class="col-md-7">
+                        <pre class="prettyprint" id="sandbox-js"></pre>
+                        <pre class="prettyprint" id="sandbox-html"></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="requirements">
+                <h4>Requirements</h4>
+                <p>
+                    There are useful bundles for this component in …\src\DocuWare\RestfulWebservices\AspMvcSharedResources\ResourcesRegistry.cs,<br />
+                    so all needed is:
+                </p>
+                    <pre class="prettyprint">
+    Bundle.CreateCssBundle(ThemeBundleName)
+        .Add(ResourcesRegistry.ValueFormattingCssBundle);
+    Bundle.CreateJsBundle(JsBundleName)
+        .Add(ResourcesRegistry.Jq20WithoutUiBundle,
+            ResourcesRegistry.JqUi1114CustomBundle,
+            ResourcesRegistry.Knockout3Bundle,
+            ResourcesRegistry.GlobalizeBundle,
+            ResourcesRegistry.ValueFormattingBundle)
+</pre>
+            </div>
+        </div>
+
+        <div class="hide" data-bind="templateSrc: { name: 'datepickerOptions', result: $data.templateSrc.bind($data), refreshOn: data }">
+            {{if !data.changeMonth()}}
+            changeMonth: false,
+            {{/if}}
+            {{if !data.changeYear()}}
+            changeYear: false,
+            {{/if}}
+            {{if !data.showButtonPanel()}}
+            showButtonPanel: false,
+            {{/if}}
+        </div>
+        <div class="hide" data-bind="templateSrc: { name: 'sandbox-html', result: $data.templateSrc.bind($data), refreshOn: data }">
+            {{if !data.isRange()}}
+            <input type="text" data-bind="css: {'ui-hidden': data.isReadOnly()}" attr-data-bind="{{:data.bindingName()}}: value, datepickerOptions: { {{:templates.datepickerOptions}} }" />
+            {{else}}
+            <input type="text" data-bind="css: {'ui-hidden': data.isReadOnly()}" attr-data-bind="{{:data.bindingName()}}: fromDate, maxValue: toDate, datepickerOptions: { {{:templates.datepickerOptions}} isRangeStartDate: true}" />
+            <input type="text" data-bind="css: {'ui-hidden': data.isReadOnly()}" attr-data-bind="{{:data.bindingName()}}: toDate, minValue: fromDate, datepickerOptions: { {{:templates.datepickerOptions}} isRangeEndDate: true}" />
+            {{/if}}
+        </div>
+        <div class="hide" data-bind="templateSrc: { name: 'sandbox-js', result: $data.templateSrc.bind($data), refreshOn: data }">
+            <code>
+                {{if data.language() !== 'default'}}
+                Globalize.applyFormattingCulture("{{:data.language()}}", "standard");
+                DW.DateTime.setCommonDateTimeDefaults({
+                getCultureInfo: function () {
+                return "{{:data.language()}}";
+                }
+                });
+                DW.DateTime.setCalendarPickerDefaults();
+                {{/if}}
+                var myVM = function () {
+                var self = this;
+                {{if !data.isRange()}}
+                self.value = ko.observable({{if data.isReadOnly()}}new Date(){{/if}});
+                {{else}}
+                self.fromDate = ko.observable({{if data.isReadOnly()}}new Date(){{/if}});
+                self.toDate = ko.observable({{if data.isReadOnly()}}new Date(){{/if}});
+                {{/if}}
+                return self;
+                };
+            </code>
+        </div>
+    </div>
+</script>

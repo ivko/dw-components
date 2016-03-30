@@ -1,4 +1,4 @@
-define(['knockout', 'jquery', 'mootools', 'text', 'bootstrap'], function (ko, $) {
+define(['knockout', 'jquery', 'mootools-core', 'text', 'bootstrap'], function (ko, $) {
 
     function ns(path, value) {
         var args = Array.slice(arguments);
