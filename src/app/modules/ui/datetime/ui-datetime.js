@@ -1,4 +1,5 @@
 define([
+    'knockout',
     'app/utils',
     'text!./ui-datetime.html',
     'app/viewModels/sandbox',
@@ -9,7 +10,7 @@ define([
     "DateTime/dateTimeEntry/ko.dateTimePickerBinding",
     "DateTime/timeEntry/ko.timeEntryBinding",
     "DateTime/ReadOnlyDatePickerBindingHandler"
-], function(utils, template, sandbox, Globalize) {
+], function(ko, utils, template, sandbox, Globalize) {
     
     var dateTimeSandbox = new Class({
         Extends: sandbox,

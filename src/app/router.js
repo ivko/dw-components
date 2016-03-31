@@ -1,4 +1,4 @@
-define(['knockout', 'sammy', './viewModels/Disposable'], function (ko, Sammy) {
+define(['knockout', 'sammy', 'dw/viewModels/Disposable'], function (ko, Sammy) {
     
     var Router = new Class({
         Extends: DW.Disposable,
@@ -43,6 +43,9 @@ define(['knockout', 'sammy', './viewModels/Disposable'], function (ko, Sammy) {
             this.appSammy.run();
         }
     });
-
-    return namespace('App.Router', Router);
+    $.extend(ns('App'), {
+        Router: Router
+    });
+     
+    return Router;
 });

@@ -65,6 +65,11 @@ module.exports = function (grunt) {
                         'bower_components/dw-shared/Components/Widgets/slickGrid/js/slick.cellrangedecorator.js',
                         'bower_components/dw-shared/Components/Widgets/slickGrid/js/slick.autotooltips.js',
                         'bower_components/dw-shared/Components/Widgets/slickGrid/js/slick.droppable.js'
+                    ],
+                    'src/libs/bootstrap.js': [
+                        'bower_components/bootstrap/js/tooltip.js',
+                        'bower_components/bootstrap/js/popover.js',
+                        'bower_components/bootstrap/js/collapse.js'
                     ]
                 },
             },
@@ -80,7 +85,7 @@ module.exports = function (grunt) {
                     { src: 'bower_components/mootools/dist/mootools-core.js', dest: 'src/libs/mootools-core.js' },
                     { src: 'bower_components/dw-shared/Scripts/Mootools/mootools-interfaces.js', dest: 'src/libs/mootools-interfaces.js' },
                     { src: 'bower_components/sammy/lib/sammy.js', dest: 'src/libs/sammy.js' },
-                    { src: 'bower_components/bootstrap/dist/js/bootstrap.js', dest: 'src/libs/bootstrap.js' },
+//                    { src: 'bower_components/bootstrap/dist/js/bootstrap.js', dest: 'src/libs/bootstrap.js' },
                     { src: 'bower_components/js-beautify/js/lib/beautify.js', dest: 'src/libs/beautify.js' },
                     { src: 'bower_components/js-beautify/js/lib/beautify-css.js', dest: 'src/libs/beautify-css.js' },
                     { src: 'bower_components/js-beautify/js/lib/beautify-html.js', dest: 'src/libs/beautify-html.js' },

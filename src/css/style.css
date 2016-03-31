@@ -12533,7 +12533,6 @@ disabled look for disabled choices in the results dropdown
 .ui-tabs-horizontal.ui-tabs-count-single li.ui-tabs-active {
   border: 0;
   margin-left: 0;
-  background-color: #eef1f2;
 }
 .ui-tabs-horizontal.ui-tabs-count-single li.ui-tabs-active.dw-colors a {
   padding-left: 0;
@@ -14740,6 +14739,7 @@ body > div {
   border: 0 none;
   padding: 15px;
   font-size: 16px;
+  line-height: 20px;
 }
 .container-wrapper .sidebar-wrapper .nav-wrapper .list-group .list-group-item:hover {
   color: #0e93f8;
@@ -14763,6 +14763,11 @@ body > div {
 .container-wrapper .sidebar-wrapper .nav-wrapper .list-group .submenu {
   padding-left: 15px;
 }
+.container-wrapper .sidebar-wrapper .nav-wrapper .list-group .submenu .list-group-item {
+  padding: 10px 15px;
+  font-size: 15px;
+  line-height: 18px;
+}
 .container-wrapper .content-wrapper {
   width: calc( 100% - 285px );
   overflow: auto;
@@ -14774,7 +14779,15 @@ body > div {
 }
 .container-wrapper .content-wrapper .module-wrapper .example {
   border: 1px solid #F0F0F0;
-  padding: 10px;
+  padding: 15px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 1px;
+  background-size: 20px 20px;
+  background-image: url("../images/example.svg");
+  background-color: white;
 }
 .container-wrapper .content-wrapper .module-wrapper .list {
   padding: 0;

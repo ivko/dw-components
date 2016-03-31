@@ -1,7 +1,7 @@
 {
   "name": "dw-components",
   "description": "docuware core lib",
-  "main": "/src/main.js",
+  "main": "/src/app/main.js",
   "authors": [
     "docuware team"
   ],
@@ -29,11 +29,12 @@
     "sammy": "0.7.6",
     "jquery": "2.1.4",
     "knockout": "3.4.0",
-    "mootools": "1.6.0",
+    "mootools": "1.5.1",
     "js-beautify": "1.6.2",
     "google-code-prettify": "*",
     "jsrender": "0.9.74",
-    "moment": "2.1.0"
+    "moment": "2.1.0",
+    "dw-shared": "../../../../RestfulWebservices/AspMvcSharedResources/SharedResources"
   },
   "devDependencies": {}
 }

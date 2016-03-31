@@ -1,3 +1,89 @@
 <script type="text/html" id="template-ui-tabs">
-    <h3>Tabs</h3>
+    <h1 class="page-header">Tabs</h1>
+    <p>Tabs description...</p>
+
+    <h4>Example</h4>
+    <div class="sb-toolbar">
+        <button type="button" data-bind="click: $data.addInstance.bind($data)">
+            Add new item
+        </button>
+        <button type="button" data-bind="click: $data.removeAll.bind($data)">
+            Close All
+        </button>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="example" data-bind="prettyprint: '.example-button-1', prettyprints: { target: '.example-button-1', 'content': '#dwTabsQuickMenus'}">
+<div class="dw-navigationContent" data-bind="dwTabs: {
+    refreshOn: instances,
+    active: selectedInstanceIndex,
+    updateTriggers: {
+        isActive: $data
+    },
+    showQuickMenu: true,
+    debug: true,
+    scrollable: true,
+    sortable: true
+}">
+    <ul class="dw-tabStrip" data-bind="foreach: {
+        data: instances,
+        templateEngine: DW.Utils.filteredTemplateEngine
+    }">
+        <li class="dw-colors" data-bind="css: color">
+            <a data-bind="attr: { href: '#' + id() }">
+                <span data-bind="text: name"></span>
+            </a>
+        </li>
+    </ul>
+    <!-- ko template: {
+    name: 'dwTabsQuickMenu',
+    data: {
+        items: instances,
+        click: selectedInstance,
+        columnMaxItems: 10
+    }
+} -->
+    <!-- /ko -->
+    <!-- ko foreach: instances -->
+    <div class="dw-tabContent" data-bind="attr: { id: id() }">
+        <div class="sb-content" data-bind="text:text"></div>
+    </div>
+    <!-- /ko -->
+</div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <pre class="example-button-1"></pre>
+            </div>
+        </div>
+    </div>
 </script>
+
+<script type="text/html" id="dwTabsQuickMenu">
+    <div class="menu-container menu-column-container ui-tabs-quick-menu" data-bind="menuNavigaton: {
+        widgetName: 'ui-baseMenu',
+        refreshOn: items
+    }">
+        <!-- ko with: items().chunk(columnMaxItems) -->
+        <!-- ko foreach: $data -->
+        <div class="menu-column">
+            <ul data-bind="baseMenu: { refreshOn: $data, handlePropagationStopped: true }" style="display: block">
+                <!--ko foreach: $data -->
+                <li class="dw-menuColors" data-bind="class: $data.color ? $data.color : '', click: $parents[2].click">
+                    <a href="#">
+                        <!-- ko if: $data.badge && !!$data.badge.text() -->
+                        <span class="dw-circle" data-bind="text: badge.text, css: { new: badge.isNew }"></span>
+                        <!-- /ko -->
+                        <span data-bind="text: name"></span>
+                    </a>
+                </li>
+                <!--/ko-->
+            </ul>
+        </div>
+        <!-- /ko -->
+        <!-- /ko -->
+    </div>
+</script>
+

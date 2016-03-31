@@ -1,4 +1,6 @@
-define(['jquery', 'knockout', './utils', './viewModels/Disposable'], function ($, ko, utils) {
+define(['jquery', 'knockout', './utils', 'dw/viewModels/Disposable'], function ($, ko, utils) {
+    
+    
     var Module = new Class({
         Extends: DW.Disposable,
         Implements: [Options],
@@ -54,5 +56,9 @@ define(['jquery', 'knockout', './utils', './viewModels/Disposable'], function ($
         }
     });
     
-    return namespace('App.Module', Module);
+    $.extend(ns('App'), {
+        Module: Module
+    });
+     
+    return Module;
 });
