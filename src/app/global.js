@@ -1,3 +1,3 @@
-define(['knockout', 'jquery', 'text', 'bootstrap', 'dw/global'], function (ko, $) {
+define(['dw/global'], function (ko, $) {
     
 });

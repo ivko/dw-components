@@ -2,10 +2,7 @@ require.config({
     waitSeconds: 15,
     paths: {
         "app": "../app",
-        "DateTime":"dw/Widgets/DateTime"
-    },
-    map: {
-
+        "dw": "../dw"
     },
     shim: {
         "jquery.plugin": ["jquery"],
