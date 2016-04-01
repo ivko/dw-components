@@ -27,13 +27,9 @@
     "requirejs": "2.1.22",
     "text": "2.0.14",
     "sammy": "0.7.6",
-    "jquery": "2.1.4",
-    "knockout": "3.4.0",
-    "mootools": "1.5.1",
     "js-beautify": "1.6.2",
     "google-code-prettify": "*",
     "jsrender": "0.9.74",
-    "moment": "2.1.0",
     "dw-shared": "../../../../RestfulWebservices/AspMvcSharedResources/SharedResources"
   },
   "devDependencies": {}

@@ -4,12 +4,12 @@ define([
     'text!./ui-datetime.html',
     'app/viewModels/sandbox',
     'globalize',
-    'globalize.extensions',
-    "DateTime/CommonDateTimeDefaults",
-    "DateTime/dateEntry/ko.datePickerBinding",
-    "DateTime/dateTimeEntry/ko.dateTimePickerBinding",
-    "DateTime/timeEntry/ko.timeEntryBinding",
-    "DateTime/ReadOnlyDatePickerBindingHandler"
+    'dw/globalize.extensions',
+    "dw/Widgets/DateTime/CommonDateTimeDefaults",
+    "dw/Widgets/DateTime/dateEntry/ko.datePickerBinding",
+    "dw/Widgets/DateTime/dateTimeEntry/ko.dateTimePickerBinding",
+    "dw/Widgets/DateTime/timeEntry/ko.timeEntryBinding",
+    "dw/Widgets/DateTime/ReadOnlyDatePickerBindingHandler"
 ], function(ko, utils, template, sandbox, Globalize) {
     
     var dateTimeSandbox = new Class({

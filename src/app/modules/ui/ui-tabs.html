@@ -1,24 +1,47 @@
 <script type="text/html" id="template-ui-tabs">
+<style>
+    .tab-content {
+        text-align: center;
+    }
+</style>
     <h1 class="page-header">Tabs</h1>
     <p>Tabs description...</p>
 
-    <h4>Example</h4>
-    <div class="sb-toolbar">
-        <button type="button" data-bind="click: $data.addInstance.bind($data)">
-            Add new item
-        </button>
-        <button type="button" data-bind="click: $data.removeAll.bind($data)">
-            Close All
-        </button>
-    </div>
-    <br />
+    <h4>Basic usage</h4>
     <div class="row">
         <div class="col-md-12">
-            <div class="example" data-bind="prettyprint: '.example-button-1', prettyprints: { target: '.example-button-1', 'content': '#dwTabsQuickMenus'}">
+            <h5>View Model</h5>
+            <pre data-bind="prettyprint: {lang: 'javascript'}">
+function TabVM(id, name) {
+    this.id = id;
+    this.name = name;
+};
+
+function ViewModel() {
+    this.selectedInstance = ko.observable();
+    this.selectedInstanceIndex = ko.observable(0);
+    this.selectedInstance.subscribe(function (instance) {
+        this.selectedInstanceIndex(this.instances().indexOf(instance));
+    }, this);
+
+    this.instances = ko.observableArray([
+        new TabVM(1, "Tab 1"),
+        new TabVM(2, "Tab 2"),
+        new TabVM(3, "Tab 3")
+    ]);
+}
+            </pre>
+        </div>
+        <div class="col-md-12">
+            <h5>Template</h5>
+            <pre class="example-tabs-2"></pre>
+        </div>
+        <div class="col-md-12">
+            <h5>Result</h5>
+            <div class="example" data-bind="prettyprint: '.example-tabs-2'">
 <div data-bind="dwTabs: {
     refreshOn: instances,
-    active: selectedInstanceIndex,
-    scrollable: true
+    active: selectedInstanceIndex
 }">
     <ul class="dw-tabStrip" data-bind="foreach: {
         data: instances
@@ -31,15 +54,10 @@
     </ul>
     <!-- ko foreach: instances -->
     <div class="dw-tabContent" data-bind="attr: { id: id() }">
-        <div class="sb-content" data-bind="text:text"></div>
+        <h2 class="tab-content" data-bind="text:name"></h2>
     </div>
     <!-- /ko -->
 </div>
-
-                </div>
-            </div>
-            <div class="col-md-12">
-                <pre class="example-button-1"></pre>
             </div>
         </div>
     </div>

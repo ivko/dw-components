@@ -2,10 +2,7 @@ require.config({
     waitSeconds: 15,
     paths: {
         "app": "../app",
-        "dw":"../../bower_components/dw-shared/Components",
-        "globalize.extensions": "../../bower_components/dw-shared/Components/Globalize/dw.globalize.extensions",
-        "prettify": "../../bower_components/google-code-prettify/src/prettify",
-        "DateTime":"../../bower_components/dw-shared/Components/Widgets/DateTime"
+        "DateTime":"dw/Widgets/DateTime"
     },
     map: {
 
@@ -19,8 +16,7 @@ require.config({
             "exports": "Globalize"
         },
         "mootools-interfaces": ["mootools-core"],
-        "knockout": ["jquery"],
-        "app/viewModels/Disposable": ["app/global"]
+        "knockout": ["jquery"]
     },
     urlArgs: "bust=" + (new Date()).getTime()
 });

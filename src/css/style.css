@@ -11607,6 +11607,17 @@ li li li {
 .dw-grid .slick-cell.selected .dw-icon-mobile-menu:after {
   color: #FFFFFF;
 }
+.dw-grid .slick-cell span.slick-cell-icon {
+  height: 20px;
+  width: 20px;
+  line-height: 15px;
+  margin-top: 0px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+.dw-grid .slick-cell span.slick-cell-text {
+  padding-left: 5px;
+}
 .dw-grid .dw-icon-filetype {
   bottom: initial;
   top: 50%;
@@ -14779,8 +14790,7 @@ body > div {
 }
 .container-wrapper .content-wrapper .module-wrapper .example {
   border: 1px solid #F0F0F0;
-  padding: 15px;
-  overflow: hidden;
+  padding: 10px;
   margin-bottom: 20px;
   border-style: solid;
   border-color: #ddd;

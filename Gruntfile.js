@@ -80,24 +80,64 @@ module.exports = function (grunt) {
                     { src: 'bower_components/requirejs/require.js', dest: 'src/libs/require.js' },
                     { src: 'bower_components/dw-shared/Scripts/jquery-ui-1.11.4.custom.js', dest: 'src/libs/jquery-ui.js' },
                     { src: 'bower_components/text/text.js', dest: 'src/libs/text.js' },
-                    { src: 'bower_components/knockout/dist/knockout.debug.js', dest: 'src/libs/knockout.js' },
-                    { src: 'bower_components/jquery/dist/jquery.js', dest: 'src/libs/jquery.js' },
-                    { src: 'bower_components/mootools/dist/mootools-core.js', dest: 'src/libs/mootools-core.js' },
-                    { src: 'bower_components/dw-shared/Scripts/Mootools/mootools-interfaces.js', dest: 'src/libs/mootools-interfaces.js' },
                     { src: 'bower_components/sammy/lib/sammy.js', dest: 'src/libs/sammy.js' },
-//                    { src: 'bower_components/bootstrap/dist/js/bootstrap.js', dest: 'src/libs/bootstrap.js' },
+                    { src: 'bower_components/google-code-prettify/src/prettify.js', dest: 'src/libs/prettify.js' },
                     { src: 'bower_components/js-beautify/js/lib/beautify.js', dest: 'src/libs/beautify.js' },
                     { src: 'bower_components/js-beautify/js/lib/beautify-css.js', dest: 'src/libs/beautify-css.js' },
                     { src: 'bower_components/js-beautify/js/lib/beautify-html.js', dest: 'src/libs/beautify-html.js' },
                     { src: 'bower_components/jsrender/jsrender.js', dest: 'src/libs/jsrender.js'},
-                    { src: 'bower_components/moment/moment.js', dest: 'src/libs/moment.js' },
+                    
+                    { src: 'bower_components/dw-shared/Scripts/knockout-3.4.0.debug.js', dest: 'src/libs/knockout.js' },
+                    { src: 'bower_components/dw-shared/Scripts/jquery-2.1.4.js', dest: 'src/libs/jquery.js' },
+                    { src: 'bower_components/dw-shared/Scripts/Mootools/mootools-core.js', dest: 'src/libs/mootools-core.js' },
+                    { src: 'bower_components/dw-shared/Scripts/Mootools/mootools-interfaces.js', dest: 'src/libs/mootools-interfaces.js' },
+                    { src: 'bower_components/dw-shared/Components/moment.js', dest: 'src/libs/moment.js' },
+                    { src: 'bower_components/dw-shared/Components/Globalize/dw.globalize.extensions.js', dest: 'src/libs/dw/globalize.extensions.js'},
                     { src: 'bower_components/dw-shared/Components/jquery.plugin.js', dest: 'src/libs/jquery.plugin.js'},
+        
                     { src: 'bower_components/dw-shared/Components/Widgets/DateTime/dateEntry/jquery.dateentry.js', dest: 'src/libs/jquery.dateentry.js' },
                     { src: 'bower_components/dw-shared/Components/Widgets/DateTime/dateTimeEntry/jquery.datetimeentry.js', dest: 'src/libs/jquery.datetimeentry.js' },
                     { src: 'bower_components/dw-shared/Components/Widgets/DateTime/timeEntry/jquery.timeentry.js', dest: 'src/libs/jquery.timeentry.js' },
-                    //{ src: 'bower_components/cldrjs/dist/cldr.js', dest: 'src/libs/cldr.js'},
-                    //{ src: 'bower_components/globalize/dist/globalize.js', dest: 'src/libs/globalize.js'},
-                    //{ cwd: 'bower_components/cldrjs/dist/cldr', src: '**', expand: true, dest: 'src/libs/cldr' },
+                    { src: [
+                        'global.js',
+                        'utils.js',
+                        'utils.isEqual.js',
+                        'filteredTemplateEngine.js',
+                        'knockout-jquery-ui-widget.js',
+                        
+                        'ViewModels/Disposable.js',
+                        'ViewModels/ViewModel.js',
+                        
+                        'Widgets/DateTime/CommonDateTimeDefaults.js',
+                        'Widgets/DateTime/dateEntry/ko.datePickerBinding.js',
+                        'Widgets/DateTime/dateTimeEntry/ko.dateTimePickerBinding.js',
+                        'Widgets/DateTime/timeEntry/ko.timeEntryBinding.js',
+                        'Widgets/DateTime/ReadOnlyDatePickerBindingHandler.js',
+                        'Widgets/DateTime/DatePickerBindingHandler.js',
+                        'Widgets/DateTime/timeEntry/TimeEntryDefaults.js',
+                        'Widgets/DateTime/dateTimeEntry/DateTimePickerBindingHandler.js',
+                        'Widgets/DateTime/BaseDatePickerBindingHandler.js',
+                        'Widgets/DateTime/dateTimeEntry/DateTimeEntryDefaults.js',
+                        'Widgets/DateTime/dateTimeEntry/DateTimePickerFormatter.js',
+                        'Widgets/DateTime/dateEntry/DateEntryDefaults.js',
+                        'Widgets/DateTime/DatePickerRangeDecorators.js',
+                        'Widgets/DateTime/calendars/js/CalendarPickerDefaults.js',
+                        'Widgets/DateTime/dateEntry/DatePickerFormatter.js',
+                        
+                        'Widgets/dwTabs/js/jquery.ui.dwTabs.js',
+                        'Widgets/dwTabs/js/ko.bindingHandlers.dwTabs.js',
+                        
+                        'Bindings/BindingHandler.js',
+                        'Bindings/koJquiBindingFactory.js',
+                        
+                        'Bindings/Autocomplete/Scripts/AutocompleteBehavior.js',
+                        'Bindings/Autocomplete/Scripts/AutocompleteListVM.js',
+                        'Bindings/Autocomplete/Scripts/AutocompleteVM.js',
+                        'Bindings/Autocomplete/Scripts/DataProvider/BaseDataProvider.js',
+                        'Bindings/Autocomplete/Scripts/ko.autocompleteMenu.js',
+
+
+                    ], cwd: 'bower_components/dw-shared/Components/', dest: 'src/libs/dw/', expand: true }
                 ]
             }
         },
