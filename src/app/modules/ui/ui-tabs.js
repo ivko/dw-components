@@ -21,10 +21,6 @@ define([
         tab.color = 'Blue';
         tab.text = ko.observable(text || id);
         tab.active = ko.observable(selected || false);
-        tab.isDefault = ko.observable(!!Math.round(Math.random()));
-        tab.hasLink = ko.observable(tab.isDefault() ? false : !!Math.round(Math.random() * .7));
-        tab.hasBadge = ko.observable(tab.isDefault() ? false : !!Math.round(Math.random() * .8));
-        tab.badgeText = ko.observable(tab.hasBadge() ? Math.round(Math.random() * 100) : 0);
         return tab;
     };
 

@@ -8,12 +8,12 @@
                 <div class="nav-wrapper">
                     <div class="list-group" data-bind="foreach: $data.navigation">
                         <!-- ko ifnot: $data.children -->
-                            <a class="list-group-item" data-bind="text: $data.attr.label, url: $data.attr.id(), visible: !$data.hidden, css: {'active': $data.active()}"></a>
+                            <a class="list-group-item" data-bind="text: $data.attr.label, url: $data.attr.id(), visible: !$data.hidden, css: {'active': $data.active(), 'disabled': attr.disabled}"></a>
                         <!-- /ko -->
                         <!-- ko if: $data.children -->
                             <a class="list-group-item" data-toggle="collapse" data-bind="
                                 attr: { 'aria-expanded': String($data.activeChild())},
-                                css: { collapsed: !$data.activeChild() },
+                                css: { collapsed: !$data.activeChild(), 'disabled': attr.disabled },
                                 url: 'navigation-' + $data.url,
                                 visible: !$data.hidden">
                                 <span data-bind="text: $data.attr.label"></span>
@@ -29,7 +29,7 @@
                                 <a class="list-group-item" data-bind="
                                     text: $data.attr.label,
                                     url: $data.url,
-                                    css: { 'active': $data.active() }">
+                                    css: { 'active': $data.active(), 'disabled': attr.disabled && attr.disabled() }">
                                 </a>
                             </div>
                         <!-- /ko -->

@@ -31,7 +31,6 @@ define(['jquery', 'knockout', './utils', 'dw/viewModels/Disposable'], function (
             this.viewModel = this.addDisposable(ko.observable());
             this.moduleId = ko.unwrap(this.attr.moduleId);
             this.hidden = ko.unwrap(this.attr.hidden);
-            
         },
         activate: function() {
             utils.log('Activate module: ' + this.moduleId);
