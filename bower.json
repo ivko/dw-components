@@ -30,7 +30,7 @@
     "js-beautify": "1.6.2",
     "google-code-prettify": "*",
     "jsrender": "0.9.74",
-    "dw-shared": "../../../../RestfulWebservices/AspMvcSharedResources/SharedResources"
+    "SharedResources": "../../../../RestfulWebservices/AspMvcSharedResources/SharedResources"
   },
   "devDependencies": {}
 }

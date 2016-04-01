@@ -1,6 +1,6 @@
 define([
     'app/utils',
-    'text!./ui-checkbox.html'
+    'text!app/templates/ui/ui-checkbox.html'
 ], function(utils, template) {
     utils.addTemplates(template);
     return {

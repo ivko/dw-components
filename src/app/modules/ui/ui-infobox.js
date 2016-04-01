@@ -1,6 +1,6 @@
 define([
     'app/utils',
-    'text!./ui-infobox.html'
+    'text!app/templates/ui/ui-infobox.html'
 ], function(utils, template) {
     utils.addTemplates(template);
     return {

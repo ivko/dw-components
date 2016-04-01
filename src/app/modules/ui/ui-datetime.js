@@ -1,7 +1,7 @@
 define([
     'knockout',
     'app/utils',
-    'text!./ui-datetime.html',
+    'text!app/templates/ui/ui-datetime.html',
     'app/viewModels/sandbox',
     'globalize',
     'dw/globalize.extensions',

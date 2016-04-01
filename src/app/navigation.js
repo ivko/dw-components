@@ -27,7 +27,7 @@ define([], function() {
                 { "disabled": true, "id": "ui.table", "moduleId": "app/modules/ui/ui-table", "label": "Table" },
                 { "disabled": true, "id": "ui.combo", "moduleId": "app/modules/ui/ui-combo", "label": "Comboboxes" },
                 { "disabled": true, "id": "ui.tooltip", "moduleId": "app/modules/ui/ui-tooltip", "label": "Tooltip" },
-                { "id": "ui.datetime", "moduleId": "app/modules/ui/datetime/ui-datetime", "label": "Date Time" },
+                { "id": "ui.datetime", "moduleId": "app/modules/ui/ui-datetime", "label": "Date Time" },
                 { "disabled": true, "id": "ui.infobox", "moduleId": "app/modules/ui/ui-infobox", "label": "Info popover" },
                 { "disabled": true, "id": "ui.toast", "moduleId": "app/modules/ui/ui-toast", "label": "Toast" },
                 { "disabled": true, "id": "ui.menu", "moduleId": "app/modules/ui/ui-menus", "label": "Menus" }

@@ -1,6 +1,6 @@
 define([
     'app/utils',
-    'text!./core-disposable.html'
+    'text!app/templates/core/core-disposable.html'
 ], function(utils, template) {
     utils.addTemplates(template);
     return {

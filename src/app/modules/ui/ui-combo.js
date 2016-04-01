@@ -1,6 +1,6 @@
 define([
     'app/utils',
-    'text!./ui-combo.html',
+    'text!app/templates/ui/ui-combo.html',
     'dw/Bindings/Autocomplete/Scripts/ko.autocompleteMenu'
 ], function(utils, template) {
     utils.addTemplates(template);

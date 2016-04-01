@@ -1,6 +1,6 @@
 define([
     'app/utils',
-    'text!./ui-radio.html'
+    'text!app/templates/ui/ui-radio.html'
 ], function(utils, template) {
     utils.addTemplates(template);
     return {

@@ -1,6 +1,6 @@
 define([
     'app/utils',
-    'text!./ui-tooltip.html'
+    'text!app/templates/ui/ui-tooltip.html'
 ], function(utils, template) {
     utils.addTemplates(template);
     return {

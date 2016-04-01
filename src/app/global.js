@@ -1,3 +1,3 @@
-define(['dw/global'], function (ko, $) {
+define(['dw/global', 'bootstrap'], function (ko, $) {
     
 });

@@ -1,6 +1,6 @@
 define([
     'app/utils',
-    'text!./ui-tabs.html',
+    'text!app/templates/ui/ui-tabs.html',
     'knockout',
     'dw/Widgets/dwTabs/js/ko.bindingHandlers.dwTabs'
 ], function(utils, template, ko) {
