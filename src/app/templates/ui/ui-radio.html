@@ -1,19 +1,23 @@
 <script type="text/html" id="template-ui-radio">
-    <h1 class="page-header">Radio button</h1>
+    <h1>Radio button</h1>
 
     <p>Radio button description...</p>
-
-    <h4>Basic Usage</h4>
-    <div class="row">
-        <div class="col-md-6">
+    <hr class="divider" style="margin-top:40px;">
+    <h2>Basic Usage</h2>
+    <ul class="nav nav-tabs tabs tabs-style-topline">
+        <li class="active"><a data-toggle="tab" href="#section1"><span>Result</span></a></li>
+        <li><a data-toggle="tab" href="#section2"><span>HTML</span></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="section1" class="tab-pane fade in active">
             <div class="example" data-bind="prettyprint: '.example-radio-1'">
-                <input name="radio-name" class="dw-radio" id="uniqe-radio-1" type="radio" value="1" checked="checked">
-                <label for="uniqe-radio-1" >Label one</label>
-                <input name="radio-name" class="dw-radio" id="uniqe-radio-2" type="radio" value="2">
-                <label for="uniqe-radio-2">Label two</label>
+                <input name="r-name" class="dw-radio" id="r1" type="radio" value="1" checked="checked">
+                <label for="r1" >Label one</label>
+                <input name="r-name" class="dw-radio" id="r2" type="radio" value="2">
+                <label for="r2">Label two</label>
             </div>
         </div>
-        <div class="col-md-6">
+        <div id="section2" class="tab-pane fade">
             <pre class="example-radio-1"></pre>
         </div>
     </div>

@@ -1,31 +1,40 @@
 <script type="text/html" id="template-ui-checkbox">
     
-    <h1 class="page-header">Checkbox</h1>
+    <h1>Checkbox</h1>
     
     <p>Checkbox description...</p>
-
-    <h4>Checkbox left to label</h4>
-    <div class="row">
-        <div class="col-md-6">
+    <hr class="divider" style="margin-top:40px;">
+    
+    <h2>Default Checkbox</h2>
+    <ul class="nav nav-tabs tabs tabs-style-topline">
+        <li class="active"><a data-toggle="tab" href="#section1"><span>Result</span></a></li>
+        <li><a data-toggle="tab" href="#section2"><span>HTML</span></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="section1" class="tab-pane fade in active">
             <div class="example" data-bind="prettyprint: '.example-checkbox-1'">
                 <input class="dw-checkBox" id="left-checkbox" type="checkbox">
                 <label for="left-checkbox">Checkbox label</label>
             </div>
         </div>
-        <div class="col-md-6">
+        <div id="section2" class="tab-pane fade">
             <pre class="example-checkbox-1"></pre>
         </div>
     </div>
     
-    <h4>Checkbox right to label</h4>
-    <div class="row">
-        <div class="col-md-6">
+    <h2>Checkbox right to label</h2>
+    <ul class="nav nav-tabs tabs tabs-style-topline">
+        <li class="active"><a data-toggle="tab" href="#section21"><span>Result</span></a></li>
+        <li><a data-toggle="tab" href="#section22"><span>HTML</span></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="section21" class="tab-pane fade in active">
             <div class="example" data-bind="prettyprint: '.example-checkbox-2'">
                 <input class="dw-checkBoxRight" id="right-checkbox" type="checkbox">
                 <label for="right-checkbox">Checkbox label</label>
             </div>
         </div>
-        <div class="col-md-6">
+        <div id="section22" class="tab-pane fade">
             <pre class="example-checkbox-2"></pre>
         </div>
     </div>

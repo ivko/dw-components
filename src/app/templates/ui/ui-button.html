@@ -1,10 +1,16 @@
 <script type="text/html" id="template-ui-button">
-    <h1 class="page-header">Buttons</h1>
+    <h1>Buttons</h1>
     <p>A button clearly communicates what action will occur when the user touches it. It consists of text, an icon, or both, designed in accordance with your app’s color theme.</p>
 
-    <h4>Default functionality</h4>
-    <div class="row">
-        <div class="col-md-6">
+    <hr class="divider" style="margin-top:40px;">
+    <h2>Default functionality</h2>
+
+    <ul class="nav nav-tabs tabs tabs-style-topline">
+        <li class="active"><a data-toggle="tab" href="#section1"><span>Result</span></a></li>
+        <li><a data-toggle="tab" href="#section2"><span>HTML</span></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="section1" class="tab-pane fade in active">
             <div class="example" data-bind="prettyprint: '.example-button-1'">
 <button type="button" data-bind="jqueryui: {
     widget: 'button',
@@ -18,21 +24,22 @@
         label: 'Save'
     }
 }"></button>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <pre class="example-button-1"></pre>
             </div>
         </div>
-        
+        <div id="section2" class="tab-pane fade">
+            <pre class="example-button-1"></pre>
+        </div>
+    </div>
             
-            
-            
-        <h5>Basic Icon</h5>
-        
-        <div class="row">
-            <div class="col-md-6">
-                <div class="example" data-bind="prettyprint: '.example-button-2'">
+    <h2>Basic Icon</h2>
+    
+    <ul class="nav nav-tabs tabs tabs-style-topline">
+        <li class="active"><a data-toggle="tab" href="#section21"><span>Result</span></a></li>
+        <li><a data-toggle="tab" href="#section22"><span>HTML</span></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="section21" class="tab-pane fade in active">
+            <div class="example" data-bind="prettyprint: '.example-button-2'">
 <button type="button" data-bind="jqueryui: {
     widget: 'button',
     options: {
@@ -42,18 +49,23 @@
         text: false
     }
 }"></button>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <pre class="example-button-2">
-                    
-                </pre>
             </div>
         </div>
-        <h5>Icon position</h5>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="example" data-bind="prettyprint: '.example-button-2'">
+        <div id="section22" class="tab-pane fade">
+            <pre class="example-button-2"></pre>
+        </div>
+    </div>
+        
+        
+    <h2>Icon position</h2>
+    <ul class="nav nav-tabs tabs tabs-style-topline">
+        <li class="active"><a data-toggle="tab" href="#section31"><span>Result</span></a></li>
+        <li><a data-toggle="tab" href="#section32"><span>HTML</span></a></li>
+    </ul>
+    <div class="tab-content">
+
+        <div id="section31" class="tab-pane fade in active">
+                <div class="example" data-bind="prettyprint: '.example-button-3'">
 <button type="button" data-bind="jqueryui: {
     widget: 'button',
     options: {
@@ -63,17 +75,6 @@
         label:'Button with icon on the left'
     }
 }"></button>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <pre class="example-button-2">
-                    
-                </pre>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="example" data-bind="prettyprint: '.example-button-3'">
 <button type="button" data-bind="jqueryui: {
     widget: 'button',
     options: {
@@ -83,18 +84,22 @@
         label: 'Button with icon on the right'
     }
 }"></button>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <pre class="example-button-3">
-                    
-                </pre>
             </div>
         </div>
-        <h5>More icons</h5>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="example" data-bind="prettyprint: '.example-button-4'">
+        <div id="section32" class="tab-pane fade">
+            <pre class="example-button-3"></pre>
+        </div>
+    </div>
+    
+    <h2>Two icons</h2>
+    <ul class="nav nav-tabs tabs tabs-style-topline">
+        <li class="active"><a data-toggle="tab" href="#section51"><span>Result</span></a></li>
+        <li><a data-toggle="tab" href="#section52"><span>HTML</span></a></li>
+    </ul>
+    <div class="tab-content">
+
+        <div id="section51" class="tab-pane fade in active">
+            <div class="example" data-bind="prettyprint: '.example-button-5'">
 <button type="button" data-bind="jqueryui: {
     widget: 'button',
     options: {
@@ -105,17 +110,7 @@
         label: 'Button with two icons'
     }
 }"></button>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <pre class="example-button-4">
-                    
-                </pre>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="example" data-bind="prettyprint: '.example-button-5'">
+
 <button type="button" data-bind="jqueryui: {
     widget: 'button',
     options: {
@@ -126,19 +121,22 @@
         text: false
     }
 }"></button>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <pre class="example-button-5">
-                    
-                </pre>
             </div>
         </div>
-        <h5>Links</h5>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="example" data-bind="prettyprint: '.example-button-6'">
-<a href="#" data-bind="jqueryui: {
+        <div id="section52" class="tab-pane fade">
+            <pre class="example-button-5"></pre>
+        </div>
+    </div>
+    
+    <h2>Links</h2>
+    <ul class="nav nav-tabs tabs tabs-style-topline">
+        <li class="active"><a data-toggle="tab" href="#section61"><span>Result</span></a></li>
+        <li><a data-toggle="tab" href="#section62"><span>HTML</span></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="section61" class="tab-pane fade in active">
+            <div class="example" data-bind="prettyprint: '.example-button-6'">
+<a href="javascript:" data-bind="jqueryui: {
     widget: 'button',
     options: {
         icons: {
@@ -149,10 +147,8 @@
 }"></a>
             </div>
         </div>
-        <div class="col-md-6">
-            <pre class="example-button-6">
-                
-            </pre>
+        <div id="section62" class="tab-pane fade">
+            <pre class="example-button-6"></pre>
         </div>
     </div>
 </script>

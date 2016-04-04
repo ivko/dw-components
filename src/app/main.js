@@ -3,7 +3,8 @@
 /* global Options */
 /* global DW */
 /* global App */
-define(['jquery', 'knockout', './utils', './navigation', './templates', './router', './module', './bindings'], function ($, ko, utils, navigation, templates) {
+define(['jquery', 'knockout', './utils', './navigation', './templates', './router', './module', './bindings'],
+    function ($, ko, utils, navigation, templates) {
     
     var Main = new Class({
         Extends: DW.Disposable,

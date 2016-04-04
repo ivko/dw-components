@@ -1,6 +1,6 @@
 ﻿(function (factory) {
     if (typeof define === "function" && define.amd) { // AMD.
-        define(["jquery", "knockout", "./jquery.ui.dwTabs", "../../../Bindings/koJquiBindingFactory"], factory);
+        define(["jquery", "knockout", "./jquery.ui.dwTabs", "../../../Bindings/koJquiBindingFactory", "../../../Bindings/knockoutExtensions"], factory);
     } else { // Global
         factory(jQuery, ko);
     }

@@ -1,5 +1,6 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 @import "https://cdn.rawgit.com/google/code-prettify/master/styles/sons-of-obsidian.css";
+/*@import "http://localhost/PatternLibrary/css/prettify.css";*/
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;

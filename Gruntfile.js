@@ -67,6 +67,7 @@ module.exports = function (grunt) {
                         'bower_components/SharedResources/Components/Widgets/slickGrid/js/slick.droppable.js'
                     ],
                     'src/libs/bootstrap.js': [
+                        'bower_components/bootstrap/js/tab.js',
                         'bower_components/bootstrap/js/tooltip.js',
                         'bower_components/bootstrap/js/popover.js',
                         'bower_components/bootstrap/js/collapse.js'
@@ -93,7 +94,7 @@ module.exports = function (grunt) {
                     { src: 'bower_components/SharedResources/Scripts/Mootools/mootools-core.js', dest: 'src/libs/mootools-core.js' },
                     { src: 'bower_components/SharedResources/Scripts/Mootools/mootools-interfaces.js', dest: 'src/libs/mootools-interfaces.js' },
                     { src: 'bower_components/SharedResources/Components/moment.js', dest: 'src/libs/moment.js' },
-                    { src: 'bower_components/SharedResources/Components/Globalize/dw.globalize.extensions.js', dest: 'src/libs/dw/globalize.extensions.js'},
+                    { src: 'bower_components/SharedResources/Components/Globalize/dw.globalize.extensions.js', dest: 'src/dw/globalize.extensions.js'},
                     { src: 'bower_components/SharedResources/Components/jquery.plugin.js', dest: 'src/libs/jquery.plugin.js'},
                     { src: 'bower_components/SharedResources/Components/Widgets/DateTime/dateEntry/jquery.dateentry.js', dest: 'src/libs/jquery.dateentry.js' },
                     { src: 'bower_components/SharedResources/Components/Widgets/DateTime/dateTimeEntry/jquery.datetimeentry.js', dest: 'src/libs/jquery.datetimeentry.js' },
@@ -110,6 +111,27 @@ module.exports = function (grunt) {
                             'filteredTemplateEngine.js',
                             'knockout-jquery-ui-widget.js',
                         
+                            'Bindings/BindingHandler.js',
+                            'Bindings/koJquiBindingFactory.js',
+                            'Bindings/knockoutExtensions.js',
+                            
+                            'Bindings/Tooltip/Scripts/tooltip.js',
+                            'Bindings/Tooltip/Scripts/interfaces/ITooltipOptions.js',
+
+                            //'Commands/Scripts/Command.js',
+                            //'Commands/Scripts/CommandBindingHandlers.js',
+
+                            'Bindings/infobox.js',
+                            //'Bindings/knockout-delegatedEvents.js',
+                            'Bindings/knockout-sortable.js',
+                            //'Bindings/knockout.activity.js',
+                            //'Bindings/knockout.file.js',
+                            //'Bindings/knockout.validation.js',
+                            'Bindings/popover.js',
+                            'Bindings/position.js',
+                            'Bindings/sortable.js',
+                            'Bindings/uncheck.js',
+                            
                             'ViewModels/Disposable.js',
                             'ViewModels/ViewModel.js',
                         
@@ -131,15 +153,28 @@ module.exports = function (grunt) {
                         
                             'Widgets/dwTabs/js/jquery.ui.dwTabs.js',
                             'Widgets/dwTabs/js/ko.bindingHandlers.dwTabs.js',
+                            
+                            'Widgets/table/Scripts/TableVM.js',
+                            'Widgets/table/Scripts/FilteredTableVM.js',
+                            'Widgets/table/Scripts/SortableTableVM.js',
+                            'Widgets/table/Scripts/VirtualTableVM.js',
                         
-                            'Bindings/BindingHandler.js',
-                            'Bindings/koJquiBindingFactory.js',
-                        
+                            'Widgets/toastr/js/ko.bindingHandlers.toastr.js',
+                            'Widgets/toastr/js/toastr.js',
+                            
                             'Bindings/Autocomplete/Scripts/AutocompleteBehavior.js',
                             'Bindings/Autocomplete/Scripts/AutocompleteListVM.js',
                             'Bindings/Autocomplete/Scripts/AutocompleteVM.js',
                             'Bindings/Autocomplete/Scripts/DataProvider/BaseDataProvider.js',
                             'Bindings/Autocomplete/Scripts/ko.autocompleteMenu.js',
+                            
+                            
+                            'Widgets/menus/js/jquery.ui.baseMenu.js',
+                            'Widgets/menus/js/jquery.ui.contextMenu.js',
+                            'Widgets/menus/js/jquery.ui.horizontalMenu.js',
+                            'Widgets/menus/js/ko.bindingHandlers.baseMenu.js',
+                            'Widgets/menus/js/ko.bindingHandlers.contextMenu.js',
+                            'Widgets/menus/js/ko.bindingHandlers.horizontalMenu.js',
                         ]
                     }
                 ]

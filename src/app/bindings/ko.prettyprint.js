@@ -14,20 +14,20 @@ define(['jquery', 'knockout', 'beautify-html', 'beautify', 'prettify'], function
             var options = $.extend({
                 lang: 'html',
                 target: element,
-                content: element
+                content: element,
+                code: false
             }, value);
             
-            var content = $(options.content).eq(0).html();
-            var code = '';
+            var code = options.code ? options.code : $(options.content).eq(0).html();
+
             switch (options.lang) {
                 case 'javascript':
-                    code = js_beautify(content, { 'preserve_newlines': false });
+                    code = js_beautify(code, { 'preserve_newlines': false });
                     break;
                 default:
-                    code = html_beautify(content, { 'preserve_newlines': true }).replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    code = html_beautify(code, { 'preserve_newlines': true }).replace(/</g, '&lt;').replace(/>/g, '&gt;');
                     break
             }
-            
             
             $(options.target)
                 .addClass('prettyprint')

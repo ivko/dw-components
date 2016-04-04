@@ -5,15 +5,16 @@ require.config({
         "dw": "../dw"
     },
     shim: {
+        "mootools-interfaces": ["mootools-core"],
+        "knockout": ["jquery"],
+        "bootstrap": ["jquery"],
         "jquery.plugin": ["jquery"],
         "jquery.dateentry": ["jquery.plugin"],
         "jquery.datetimeentry": ["jquery.plugin"],
         "jquery.timeentry": ["jquery.plugin"],
         "globalize": {
             "exports": "Globalize"
-        },
-        "mootools-interfaces": ["mootools-core"],
-        "knockout": ["jquery"]
+        }
     },
     urlArgs: "bust=" + (new Date()).getTime()
 });

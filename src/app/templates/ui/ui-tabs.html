@@ -1,44 +1,19 @@
 <script type="text/html" id="template-ui-tabs">
-<style>
-    .tab-content {
-        text-align: center;
-    }
-</style>
-    <h1 class="page-header">Tabs</h1>
-    <p>Tabs description...</p>
+    <h1>Tabs</h1>
+    <p>A single content area with multiple panels, each associated with a header in a list. </p>
 
-    <h4>Basic usage</h4>
-    <div class="row">
-        <div class="col-md-12">
-            <h5>View Model</h5>
-            <pre data-bind="prettyprint: {lang: 'javascript'}">
-function TabVM(id, name) {
-    this.id = id;
-    this.name = name;
-};
+    <hr class="divider" style="margin-top:40px;">
+    <h2>Default functionality</h2>
 
-function ViewModel() {
-    this.selectedInstance = ko.observable();
-    this.selectedInstanceIndex = ko.observable(0);
-    this.selectedInstance.subscribe(function (instance) {
-        this.selectedInstanceIndex(this.instances().indexOf(instance));
-    }, this);
-
-    this.instances = ko.observableArray([
-        new TabVM(1, "Tab 1"),
-        new TabVM(2, "Tab 2"),
-        new TabVM(3, "Tab 3")
-    ]);
-}
-            </pre>
-        </div>
-        <div class="col-md-12">
-            <h5>Template</h5>
-            <pre class="example-tabs-2"></pre>
-        </div>
-        <div class="col-md-12">
-            <h5>Result</h5>
-            <div class="example" data-bind="prettyprint: '.example-tabs-2'">
+    <ul class="nav nav-tabs tabs tabs-style-topline">
+        <li class="active"><a data-toggle="tab" href="#section1"><span>Example</span></a></li>
+        <li><a data-toggle="tab" href="#section2"><span>View Model</span></a></li>
+        <li><a data-toggle="tab" href="#section3"><span>HTML</span></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="section1" class="tab-pane fade in active">
+            <!-- ko with: $data.simple.model -->
+            <div class="example" data-bind="prettyprint: '.example-tabs-1'">
 <div data-bind="dwTabs: {
     refreshOn: instances,
     active: selectedInstanceIndex
@@ -46,19 +21,76 @@ function ViewModel() {
     <ul class="dw-tabStrip" data-bind="foreach: {
         data: instances
     }">
-        <li class="dw-colors" data-bind="css: color">
-            <a data-bind="attr: { href: '#' + id() }">
+        <li>
+            <a data-bind="attr: { href: '#' + id }">
                 <span data-bind="text: name"></span>
             </a>
         </li>
     </ul>
     <!-- ko foreach: instances -->
-    <div class="dw-tabContent" data-bind="attr: { id: id() }">
-        <h2 class="tab-content" data-bind="text:name"></h2>
+    <div class="dw-tabContent" data-bind="attr: { id: id }">
+        <h2 data-bind="text:name"></h2>
     </div>
     <!-- /ko -->
 </div>
             </div>
+            <!-- /ko -->
+        </div>
+        <div id="section2" class="tab-pane fade">
+            <pre data-bind="prettyprint: {
+                lang: 'javascript',
+                code: $data.simple.code
+            }">
+            </pre>
+        </div>
+        <div id="section3" class="tab-pane fade">
+            <pre class="example-tabs-1"></pre>
+        </div>
+    </div>
+
+    <h2>Sortable</h2>
+        <ul class="nav nav-tabs tabs tabs-style-topline">
+        <li class="active"><a data-toggle="tab" href="#section21"><span>Example</span></a></li>
+        <li><a data-toggle="tab" href="#section22"><span>View Model</span></a></li>
+        <li><a data-toggle="tab" href="#section23"><span>HTML</span></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="section21" class="tab-pane fade in active">
+            <!-- ko with: $data.simple.model -->
+            <div class="example" data-bind="prettyprint: '.example-tabs-2'">
+<div data-bind="dwTabs: {
+    refreshOn: instances,
+    active: selectedInstanceIndex,
+    sortable: true
+}">
+    <ul class="dw-tabStrip" data-bind="foreach: {
+        data: instances,
+        templateEngine: DW.Utils.filteredTemplateEngine
+    }">
+        <li>
+            <a data-bind="attr: { href: '#' + id }">
+                <span data-bind="text: name"></span>
+            </a>
+        </li>
+    </ul>
+    <!-- ko foreach: instances -->
+    <div class="dw-tabContent" data-bind="attr: { id: id }">
+        <h2 data-bind="text:name"></h2>
+    </div>
+    <!-- /ko -->
+</div>
+            </div>
+            <!-- /ko -->
+        </div>
+        <div id="section22" class="tab-pane fade">
+            <pre data-bind="prettyprint: {
+                lang: 'javascript',
+                code: $data.simple.code
+            }">
+            </pre>
+        </div>
+        <div id="section23" class="tab-pane fade">
+            <pre class="example-tabs-2"></pre>
         </div>
     </div>
 </script>
