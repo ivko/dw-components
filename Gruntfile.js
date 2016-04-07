@@ -5,6 +5,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.loadNpmTasks('grunt-contrib-connect');
     
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -196,6 +197,15 @@ module.exports = function (grunt) {
                 files: {
                     // compilation.css  :  source.less
                     "src/css/style.css": "src/css/style.less"
+                }
+            }
+        },
+        connect: {
+            server: {
+                options: {
+                    port: 4000,
+                    base: '.',
+                    keepalive:true
                 }
             }
         }
