@@ -1,12 +1,33 @@
 <script type="text/html" id="template-ui-combo">
-    <h3>Combo</h3>
+    <h1>Select</h1>
+    <p>Select description...</p>
 
-    <input type="hidden" data-bind="select2: {
+    <hr class="divider" style="margin-top:40px;">
+    <h2>Default functionality</h2>
+    
+    <ul class="nav nav-tabs tabs tabs-style-topline">
+        <li class="active"><a data-toggle="tab" href="#section1"><span>Result</span></a></li>
+        <li><a data-toggle="tab" href="#section2"><span>HTML</span></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="section1" class="tab-pane fade in active">
+            <div class="example" data-bind="prettyprint: '.example-select-1'">
+<input type="hidden" data-bind="select2: {
         placeholder: 'Choose value',
         optionsText: 'text',
         optionsValue: 'value',
         selectedValue: $data.value,
-        allowClear: true,
-        data: [{text: 1, value: 1}, {text: 2, value: 2}]
+        data: [
+            {text: 'One', value: 1},
+            {text: 'Two', value: 2}
+        ]
     }">
+            </div>
+        </div>
+        <div id="section2" class="tab-pane fade">
+            <pre class="example-select-1"></pre>
+        </div>
+    </div>
+    
+    
 </script>

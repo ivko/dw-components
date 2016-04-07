@@ -29,8 +29,7 @@
     "sammy": "0.7.6",
     "js-beautify": "1.6.2",
     "google-code-prettify": "*",
-    "jsrender": "0.9.74",
-    "SharedResources": "../../../../RestfulWebservices/AspMvcSharedResources/SharedResources"
+    "jsrender": "0.9.74"
   },
   "devDependencies": {}
 }
