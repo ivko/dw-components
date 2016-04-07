@@ -108,15 +108,15 @@ module.exports = function (grunt) {
                             'global.js',
                             'utils.js',
                             'utils.isEqual.js',
+
                             'filteredTemplateEngine.js',
                             'knockout-jquery-ui-widget.js',
-                        
                             'Bindings/BindingHandler.js',
                             'Bindings/koJquiBindingFactory.js',
                             'Bindings/knockoutExtensions.js',
                             
                             'Bindings/Tooltip/Scripts/tooltip.js',
-                            'Bindings/Tooltip/Scripts/interfaces/ITooltipOptions.js',
+                            //'Bindings/Tooltip/Scripts/interfaces/ITooltipOptions.js',
 
                             //'Commands/Scripts/Command.js',
                             //'Commands/Scripts/CommandBindingHandlers.js',
@@ -168,6 +168,11 @@ module.exports = function (grunt) {
                             'Bindings/Autocomplete/Scripts/DataProvider/BaseDataProvider.js',
                             'Bindings/Autocomplete/Scripts/ko.autocompleteMenu.js',
                             
+                            'Widgets/select/js/ko.bindingHandlers.select2.js',
+                            'Widgets/select/js/select2.js',
+                            
+                            'Widgets/dwScrollbar/js/jquery.ui.dwScrollbar.js',
+                            'Widgets/dwScrollbar/js/ko.bindingHandlers.dwScrollbar.js',
                             
                             'Widgets/menus/js/jquery.ui.baseMenu.js',
                             'Widgets/menus/js/jquery.ui.contextMenu.js',

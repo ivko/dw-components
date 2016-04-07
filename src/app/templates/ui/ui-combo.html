@@ -1,28 +1,12 @@
 <script type="text/html" id="template-ui-combo">
     <h3>Combo</h3>
-    <div class="right-inner-addons">
-        <input class="dw-textField" type="text" data-bind="textInput: $data.value,
-            autocompleteMenu: {
-                data: [1,2,3],
-                viewModelOptions: {
-                    fieldValue: $data.value,
-                    setSelectListValue: $data.value
-                }
-            }" />
-    </div>
-</script>
 
-<script type="text/html" id="autocomplete-menu">
-    <div data-bind="text: console.log($data)"> Menu </div>
-</script>
-<script type="text/html" id="text-field-button">
-    <button type="button" class="dw-imageButton ac-button ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" tabindex="-1" data-bind="jqueryui: {
-        widget: 'button',
-        options: {
-            icons: {
-                primary: (visible() ? 'ui-icon-carat-1-n' : 'ui-icon-carat-1-s')
-            }
-        }
-    }"></button>
-    <span class="ui-button-icon-primary ui-icon ui-icon-carat-1-s"></span>
+    <input type="hidden" data-bind="select2: {
+        placeholder: 'Choose value',
+        optionsText: 'text',
+        optionsValue: 'value',
+        selectedValue: $data.value,
+        allowClear: true,
+        data: [{text: 1, value: 1}, {text: 2, value: 2}]
+    }">
 </script>

@@ -1,5 +1,4 @@
-﻿
-(function (factory) {
+﻿(function (factory) {
     if (typeof define === "function" && define.amd) { // AMD.
         define(["jquery", "knockout", "../utils", "./BindingHandler"], factory);
     } else { // Global

@@ -4,7 +4,11 @@
 
     <hr class="divider" style="margin-top:40px;">
     <h2>Default functionality</h2>
-
+    <style>
+    .dw-tabContent h2 {
+        text-align: center;
+    }
+    </style>
     <ul class="nav nav-tabs tabs tabs-style-topline">
         <li class="active"><a data-toggle="tab" href="#section1"><span>Example</span></a></li>
         <li><a data-toggle="tab" href="#section2"><span>View Model</span></a></li>
@@ -22,13 +26,13 @@
         data: instances
     }">
         <li>
-            <a data-bind="attr: { href: '#' + id }">
+            <a data-bind="attr: { href: '#tab1-id-' + id }">
                 <span data-bind="text: name"></span>
             </a>
         </li>
     </ul>
     <!-- ko foreach: instances -->
-    <div class="dw-tabContent" data-bind="attr: { id: id }">
+    <div class="dw-tabContent" data-bind="attr: { id: 'tab1-id-' + id }">
         <h2 data-bind="text:name"></h2>
     </div>
     <!-- /ko -->
@@ -68,13 +72,13 @@
         templateEngine: DW.Utils.filteredTemplateEngine
     }">
         <li>
-            <a data-bind="attr: { href: '#' + id }">
+            <a data-bind="attr: { href: '#' + 'tab2-id-' + id }">
                 <span data-bind="text: name"></span>
             </a>
         </li>
     </ul>
     <!-- ko foreach: instances -->
-    <div class="dw-tabContent" data-bind="attr: { id: id }">
+    <div class="dw-tabContent" data-bind="attr: { id: 'tab2-id-' + id }">
         <h2 data-bind="text:name"></h2>
     </div>
     <!-- /ko -->

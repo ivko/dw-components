@@ -14,7 +14,8 @@ require.config({
         "jquery.timeentry": ["jquery.plugin"],
         "globalize": {
             "exports": "Globalize"
-        }
+        },
+        "dw/Widgets/select/js/select2": ['jquery-ui'],
     },
     urlArgs: "bust=" + (new Date()).getTime()
 });
